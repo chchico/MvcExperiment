@@ -23,6 +23,9 @@ namespace MvcExperiment.GridMvc
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/mycommon").Include(
+                      "~/Scripts/my-common.js"));
+
             bundles.Add(new StyleBundle("~/Content/themes/base/ui").Include(
                     "~/Content/themes/base/core.css",
                     "~/Content/themes/base/accordion.css",

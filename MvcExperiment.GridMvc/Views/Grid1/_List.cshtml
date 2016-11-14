@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MvcExperiment.GridMvc.Models.Caractor>
+
+@{
+    var renderRowsOnly = ViewBag.RenderRowsOnly as bool? ?? false;
+    int quantity = 30;
+    int requestScroll = Request.QueryString["grid-scroll"] == null ? ViewBag.Scroll == null ? 1 : ViewBag.Scroll : Int32.Parse(Request.QueryString["grid-scroll"]); // 指定ページ
+    int displayCount = quantity * requestScroll > Model.Count() ? Model.Count() : quantity * requestScroll; // max以上表示しない
+}
+
+@Html.Grid(Model, new GridRenderOptions { RenderRowsOnly = renderRowsOnly, ViewName = "_GridInfinityScroll" }).AutoGenerateColumns().WithPaging(displayCount).Named("TableGrid")
+
+<script>
+    var maxCount = @(Model.Count());
+    var displayCount = @(displayCount);
+    var maxScroll = @Math.Ceiling((double)Model.Count() / quantity);
+</script>

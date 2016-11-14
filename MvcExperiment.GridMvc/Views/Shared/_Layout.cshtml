@@ -46,12 +46,8 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryui")
-    <script>
-        @* jqueryUIとbootstrapのtooltipのコンフリクトを避ける *@
-        $.widget.bridge('uitooltip', $.ui.tooltip);
-    </script>
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/mycommon")
     @RenderSection("scripts", required: false)
 </body>
 </html>

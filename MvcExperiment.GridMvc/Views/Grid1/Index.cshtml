@@ -1,9 +1,69 @@
 ﻿@model IEnumerable<MvcExperiment.GridMvc.Models.Caractor>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "無限スクロールAjax";
 }
 
-<h2>@ViewBag.Title</h2>
+<section id="SectionList">
+    <h1>@ViewBag.Title</h1>
+    <p>ヒストリーを保持できる無限スクロールです。</p>
 
-@Html.Grid(Model).AutoGenerateColumns().WithPaging(10)
+    @Html.Partial("_List", Model)
+</section>
+
+@section scripts {
+    <script>
+    $(function () {
+        // 無限スクロールAjax
+        var selectorTable = '#TableGrid';
+        var $wrapTable = $('#SectionList');
+        var $table = $(selectorTable);
+        var alertMax = function(){ return '<p class="alert alert-success">' + maxCount + '件中' + displayCount + '件表示。</p>' };
+        var loading = false; // load中フラグ
+
+        if (displayCount === maxCount) {
+            $table.after(alertMax())
+        } else {
+            var hash = getVars(window.location.search);
+            var requestScroll = hash['grid-scroll'] !== void 0 ? Number(hash['grid-scroll']) : 1;
+
+            $window.on('scroll.infinityScroll', function () {
+                if (!loading) {
+                    var scrolled = $window.scrollTop() + window.innerHeight > $wrapTable.offset().top + $wrapTable.height();
+                    if (scrolled) {
+                        loading = true;
+                        toggleBlockLoading(loading);
+
+                        // ページ設定
+                        requestScroll += 1;
+                        hash['grid-scroll'] = requestScroll;
+                        var param = '?' + getStrParameter(hash);
+                        window.history.pushState(null, null, param);
+
+                        $.ajax({
+                            url: '@Url.Action("GetList", "Grid1")?scroll=' + requestScroll,
+                            type: 'Get',
+                            success: function (data) {
+                                $('tbody', $table).html(data);
+
+                                loading = false;
+                                toggleBlockLoading(loading);
+
+                                // maxまで行ったらload完了
+                                if (requestScroll >= maxScroll) {
+                                    $window.off('scroll.infinityScroll');
+
+                                    $table.after(alertMax())
+                                }
+                            }
+                        });
+
+                    }
+                }
+            });
+        }
+    });
+    </script>
+
+
+}
