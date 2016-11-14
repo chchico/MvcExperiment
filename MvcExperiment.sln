@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcExperiment.Domain", "MvcExperiment.Domain\MvcExperiment.Domain.csproj", "{AF1205F2-FB17-4173-8505-78E9301CF483}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcExperiment.GridMvc", "MvcExperiment.GridMvc\MvcExperiment.GridMvc.csproj", "{2ED35C99-2548-445F-8074-0422E79CAE49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF1205F2-FB17-4173-8505-78E9301CF483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1205F2-FB17-4173-8505-78E9301CF483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1205F2-FB17-4173-8505-78E9301CF483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1205F2-FB17-4173-8505-78E9301CF483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ED35C99-2548-445F-8074-0422E79CAE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ED35C99-2548-445F-8074-0422E79CAE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ED35C99-2548-445F-8074-0422E79CAE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ED35C99-2548-445F-8074-0422E79CAE49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
