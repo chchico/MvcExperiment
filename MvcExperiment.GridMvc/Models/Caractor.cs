@@ -8,19 +8,22 @@
 
     public class Caractor
     {
-        public Caractor(string firstName, string lastName, int age, CaractorCategoryCd category)
+        public Caractor(int id, string firstName, string lastName, CaractorSexCd sex, CaractorCategoryCd category)
         {
+            this.ID = id;
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.Age = age;
+            this.Sex = sex;
             this.Category = category;
         }
+
+        public int ID { get; set; }
 
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
-        public int Age { get; set; }
+        public CaractorSexCd Sex { get; set; }
 
         public CaractorCategoryCd Category { get; set; }
     }

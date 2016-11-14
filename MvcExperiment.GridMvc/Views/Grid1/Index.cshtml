@@ -1,0 +1,9 @@
+﻿@model IEnumerable<MvcExperiment.GridMvc.Models.Caractor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.Grid(Model).AutoGenerateColumns().WithPaging(10)

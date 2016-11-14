@@ -6,6 +6,9 @@
     using System.Web;
     using MvcExperiment.Domain.Attributes;
 
+    /// <summary>
+    /// カテゴリ
+    /// </summary>
     public enum CaractorCategoryCd
     {
         /// <summary>
@@ -15,15 +18,39 @@
         Cd0 = 0,
 
         /// <summary>
-        /// カテゴリ1
+        /// ロミオの青い空
         /// </summary>
-        [LabeledEnum("カテゴリ1")]
+        [LabeledEnum("ロミオの青い空")]
         Cd1 = 1,
 
         /// <summary>
-        /// カテゴリ2
+        /// ムーミン
         /// </summary>
-        [LabeledEnum("カテゴリ2")]
+        [LabeledEnum("ムーミン")]
         Cd2 = 2,
+    }
+
+    /// <summary>
+    /// 性別
+    /// </summary>
+    public enum CaractorSexCd
+    {
+        /// <summary>
+        /// 無所属
+        /// </summary>
+        [LabeledEnum("無")]
+        None = 0,
+
+        /// <summary>
+        /// 男
+        /// </summary>
+        [LabeledEnum("男")]
+        Male = 1,
+
+        /// <summary>
+        /// 女
+        /// </summary>
+        [LabeledEnum("女")]
+        Female = 2,
     }
 }
