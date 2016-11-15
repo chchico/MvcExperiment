@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - @ViewBag.SiteName</title>
     @Styles.Render("~/Content/themes/base/ui")
-    @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/css")
 
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -28,9 +28,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">GridMvc <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">リンク・リスト１</a></li>
-                            <li><a href="#">リンク・リスト２</a></li>
-                            <li><a href="#">リンク・リスト３</a></li>
+                            <li><a href="@Url.Action("Index", "Grid1")">無限スクロール</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -46,7 +44,13 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script>
+        @* jqueryUIとbootstrapのtooltipのコンフリクトを避ける *@
+        $.widget.bridge('uitooltip', $.ui.tooltip);
+    </script>
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/gridmvc")
     @Scripts.Render("~/bundles/mycommon")
     @RenderSection("scripts", required: false)
 </body>

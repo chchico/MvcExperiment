@@ -19,24 +19,7 @@
         {
             var model = CaractorService.GetCaractors().OrderBy(m => m.ID).ToList();
 
-            this.TempData["Grid1List"] = model;
-
             return this.View(model);
-        }
-
-        /// <summary>
-        /// 一覧取得
-        /// </summary>
-        /// <returns>パーシャルビュー</returns>
-        public ActionResult GetList(int scroll)
-        {
-            var model = this.TempData["Grid1List"] as List<Caractor> ?? new List<Caractor>();
-            this.TempData["Grid1List"] = model;
-
-            ViewBag.RenderRowsOnly = true;
-            ViewBag.Scroll = scroll;
-
-            return this.PartialView("_List", model);
         }
     }
 }

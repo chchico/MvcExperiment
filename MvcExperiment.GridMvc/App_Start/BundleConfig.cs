@@ -23,6 +23,9 @@ namespace MvcExperiment.GridMvc
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/gridmvc").Include(
+                      "~/Scripts/gridmvc.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/mycommon").Include(
                       "~/Scripts/my-common.js"));
 
@@ -47,7 +50,8 @@ namespace MvcExperiment.GridMvc
                     "~/Content/themes/base/theme.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/site.css"));
+                    "~/Content/Gridmvc.css",
+                    "~/Content/site.css"));
         }
     }
 }
