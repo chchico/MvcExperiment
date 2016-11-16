@@ -50,8 +50,8 @@ namespace MvcExperiment.GridMvc
                     "~/Content/themes/base/theme.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                    "~/Content/Gridmvc.css",
-                    "~/Content/site.css"));
+                    "~/Content/site.css",
+                    "~/Content/Gridmvc.css"));
         }
     }
 }
