@@ -12,10 +12,21 @@
     public class RestableController : Controller
     {
         /// <summary>
-        /// Index
+        /// Demo1
         /// </summary>
         /// <returns>View</returns>
-        public ActionResult Index()
+        public ActionResult Demo1()
+        {
+            var model = CaractorService.GetCaractors().OrderBy(m => m.ID).ToList();
+
+            return this.View(model);
+        }
+
+        /// <summary>
+        /// Demo2
+        /// </summary>
+        /// <returns>View</returns>
+        public ActionResult Demo2()
         {
             var model = CaractorService.GetCaractors().OrderBy(m => m.ID).ToList();
 

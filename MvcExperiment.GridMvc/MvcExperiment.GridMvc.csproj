@@ -276,9 +276,14 @@
     <Content Include="Grid.mvc.readme" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\codefog-restables\gulpfile.js" />
+    <Content Include="Scripts\codefog-restables\restables.js" />
+    <Content Include="Scripts\codefog-restables\restables.min.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
     <Content Include="Scripts\gridmvc.min.js" />
+    <Content Include="Scripts\codefog-restables\package.json" />
+    <Content Include="Scripts\codefog-restables\README.md" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
@@ -317,7 +322,8 @@
     <Content Include="Views\Grid1\Index.cshtml" />
     <Content Include="Views\Shared\_GridInfinityScroll.cshtml" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
-    <Content Include="Views\Restable\Index.cshtml" />
+    <Content Include="Views\Restable\Demo1.cshtml" />
+    <Content Include="Views\Restable\Demo2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

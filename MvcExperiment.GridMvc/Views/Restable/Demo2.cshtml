@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MvcExperiment.GridMvc.Models.Caractor>
+
+@{
+    ViewBag.Title = "ReStable Demo2";
+    int quantity = 30;
+}
+
+<section id="SectionList">
+    <h1>@ViewBag.Title</h1>
+    <p>jquery.restable.js DEMO。</p>
+
+    @Html.Grid(Model).AutoGenerateColumns().WithPaging(quantity).Named("TableGrid").Sortable(true).Filterable(true).Selectable(false)
+</section>
+
+@section styles {
+    <link rel="stylesheet" href="~/Content/jquery.restable.min.css">
+}
+
+@section scripts {
+<script>
+    console.time("jquery.restable1");
+</script>
+<script src="~/Scripts/jquery.restable.js"></script>
+<script>
+    console.timeEnd("jquery.restable1");
+
+    $(window).ready(function () {
+
+        console.time("jquery.restable2");
+        $('#TableGrid').ReStable({
+            rowHeaders: false
+        });
+        console.timeEnd("jquery.restable2");
+    });
+</script>
+}

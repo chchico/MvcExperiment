@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MvcExperiment.GridMvc.Models.Caractor>
+
+@{
+    ViewBag.Title = "ReStable Demo1";
+    int quantity = 30;
+}
+
+<section id="SectionList">
+    <h1>@ViewBag.Title</h1>
+    <p>restables DEMO。</p>
+
+    @Html.Grid(Model).AutoGenerateColumns().WithPaging(quantity).Named("TableGrid").Sortable(true).Filterable(true).Selectable(false)
+</section>
+
+@section scripts {
+<script>
+    console.time("restables1");
+</script>
+<script src="~/Scripts/codefog-restables/restables.js"></script>
+<script>
+    console.timeEnd("restables1");
+
+    $(window).ready(function () {
+
+        console.time("restables2");
+
+
+        $('#TableGrid').resTables({
+            cssClassClone: 'restables-clone grid_table_sp'
+        });
+
+
+        console.timeEnd("restables2");
+    });
+</script>
+}
