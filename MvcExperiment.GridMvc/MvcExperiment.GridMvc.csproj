@@ -141,6 +141,8 @@
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\jquery.restable.css" />
+    <Content Include="Content\jquery.restable.min.css" />
     <Content Include="Content\Site.css">
       <DependentUpon>Site.less</DependentUpon>
     </Content>
@@ -282,12 +284,15 @@
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.restable.js" />
+    <Content Include="Scripts\jquery.restable.min.js" />
     <Content Include="Scripts\my-common.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\RestableController.cs" />
     <Compile Include="Controllers\Grid1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Enums\CaractorEnum.cs" />
@@ -312,6 +317,7 @@
     <Content Include="Views\Grid1\Index.cshtml" />
     <Content Include="Views\Shared\_GridInfinityScroll.cshtml" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
+    <Content Include="Views\Restable\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
